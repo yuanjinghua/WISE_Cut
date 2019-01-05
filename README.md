@@ -8,3 +8,6 @@ Runing this script needs a local pool of ALLWISE tiles which can be downloaded u
 This script can be used for making small cutouts and large mosaics. A mosaic of 2.5 degree X 2.5 degree for the Andromeda Galaxy is shown bellow as an example.
 
 ![M31](M31_wiseRGB_small.jpg)
+
+
+$\times$

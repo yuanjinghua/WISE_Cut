@@ -10,4 +10,3 @@ This script can be used for making small cutouts and large mosaics. A mosaic of 
 ![M31](M31_wiseRGB_small.jpg)
 
 
-$\times$

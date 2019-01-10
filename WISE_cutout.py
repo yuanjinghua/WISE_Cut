@@ -1,3 +1,11 @@
+# Making WISE Cutout/Mosaic Using Montage Wapper
+# Written by Jinghua Yuan 
+# version: 0.1, 10th Jan 2019
+# 
+# The latest version can be accessed via
+# https://github.com/yuanjinghua/WISE_Cut
+#
+
 import os
 import math
 import time
@@ -12,15 +20,28 @@ from astropy.table import Table, Column, vstack, join
 from astropy import units as u
 import astropy.coordinates as coords
 
-tileDir = '/run/media/yuan/Yuan-8T/ALLWISE/allwiseTiles/'
-wiseTileList = ascii.read('/run/media/yuan/Yuan-8T/ALLWISE/ALLWISE_atlasMeta.tbl')
-wiseTileList.sort('coadd_id')
-
 sour_name = 'M31'
 c1 = 10.684583333333332 # ra or l in degree
 c2 = 41.26916667 # dec or b in degree
 im_size = 2.5 # in degree
-wcsType = 'fk5' # galactic or fk5 
+wcsType = 'fk5'       # galactic or fk5 
+                      # It would take longer if you want a
+                      # region prejected in a galactic 
+                      # frame, especially for a large area.
+                      # Be patient when you choose 'galactic'
+
+# Replace the path to the directory of allwiseTiles with
+# the real absolute path.
+# Replace the path to the ALLWISE_altalsMeta.tbl with 
+# the real absolute path.
+
+tileDir  = '/run/media/yuan/WISEDATA/ALLWISE/allwiseTiles/'
+listFile = '/run/media/yuan/WISEDATA/ALLWISE/ALLWISE_atlasMeta.tbl'
+wiseTileList = ascii.read(listFile)
+wiseTileList.sort('coadd_id')
+
+# Don't change anything from here, if you don't know what you
+# are doing.
 
 coor = coords.SkyCoord(c1, c2, frame = wcsType,
                         unit=(u.degree, u.degree))
